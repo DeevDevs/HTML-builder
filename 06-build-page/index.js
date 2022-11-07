@@ -73,7 +73,7 @@ emitter.on("readAndWrite", ([list, index]) => {
 
 emitter.emit("createBundle");
 
-function copyFoldersAndFiles(sourceDirectory, targetDirectory, boolean) {
+async function copyFoldersAndFiles(sourceDirectory, targetDirectory, boolean) {
   if (boolean) {
     fs.rm(distAssetsFolder, { recursive: true, force: true }, (err) => {
       if (err) throw err;
